@@ -15,18 +15,28 @@
             </div>
         </div>
         <div id="content-navigation">
-            <nav>
-                <a href="" target="orders-content" class="active">All</a>
-                <a href="" target="orders-content">Belum Bayar</a>
-                <a href="" target="orders-content">Sedang Dikemas</a>
-                <a href="" target="orders-content">Dikirim</a>
-                <a href="" target="orders-content">Selesai</a>
-                <a href="" target="orders-content">Dibatalkan</a>
-                <!-- <a href="dashboard_frame/workshop.html" target="dashboard-content">Workshops</a>
-                <a href="dashboard_frame/blogs.html" target="dashboard-content">Blogs</a> -->
+            <nav id="order-nav">
+                <a href="#" target="orders-content" class="active" onclick="makeActive(this)">All</a>
+                <a href="#" target="orders-content" onclick="makeActive(this)">Belum Bayar</a>
+                <a href="#" target="orders-content" onclick="makeActive(this)">Sedang Dikemas</a>
+                <a href="#" target="orders-content" onclick="makeActive(this)">Dikirim</a>
+                <a href="#" target="orders-content" onclick="makeActive(this)">Selesai</a>
+                <a href="#" target="orders-content" onclick="makeActive(this)">Dibatalkan</a>
             </nav>
         </div>
         <iframe src="" name="orders-content" frameborder="0" width="100%" ></iframe>
     </div>
+
+    <script>
+        function makeActive(element) {
+            const links = document.querySelectorAll('#order-nav a');
+
+            links.forEach(link => {
+                link.classList.remove('active');
+            });
+
+            element.classList.add('active');
+        }
+    </script>
 </body>
 </html>

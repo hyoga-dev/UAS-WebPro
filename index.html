@@ -14,10 +14,9 @@
         <div id="sidebar">
             <h1>Phyto Store</h1>
             <nav>
-                <a href="dashboard.html" target="content" id="selected">Dashboard</a>
-                <a href="myOrder.html" target="content">My Orders</a>
-                <a href="explore.html" target="content">Explore</a>
-                <!-- <a href="featuredProduct.html" target="content">Featured Products</a> -->
+                <a href="dashboard.html" target="content" class="selected" onclick="makeActive(this)">Dashboard</a>
+                <a href="myOrder.html" target="content" onclick="makeActive(this)">My Orders</a>
+                <a href="explore.html" target="content" onclick="makeActive(this)">Explore</a>
             </nav>
             <h2>Categories</h2>
             <label class="custom-container">
@@ -43,5 +42,17 @@
         </div>
         <iframe src="myOrder.html" name="content" frameborder="0" width="100%" id="i-content"></iframe>
     </div>
+
+    <script>
+        function makeActive(element) {
+            const currentActive = document.querySelector('nav a.selected');
+            
+            if (currentActive) {
+                currentActive.classList.remove('selected');
+            }
+            
+            element.classList.add('selected');
+        }
+    </script>
 </body>
 </html>

@@ -20,14 +20,25 @@
 
         <div id="content-navigation">
             <nav>
-                <a href="dashboard_frame/shop.html" target="dashboard-content" class="active">Shop</a>
-                <a href="dashboard_frame/plantsCare.html" target="dashboard-content">Plants Care</a>
-                <!-- <a href="dashboard_frame/workshop.html" target="dashboard-content">Workshops</a>
-                <a href="dashboard_frame/blogs.html" target="dashboard-content">Blogs</a> -->
+                <nav>
+                    <a href="dashboard_frame/shop.html" target="dashboard-content" class="active" onclick="makeActive(this)">Shop</a>
+                    <a href="dashboard_frame/plantsCare.html" target="dashboard-content" onclick="makeActive(this)">Plants Care</a>
+                </nav>
             </nav>
         </div>
 
         <iframe src="dashboard_frame/shop.html" name="dashboard-content" frameborder="0" width="100%" ></iframe>
     </div>
+    <script>
+        function makeActive(element) {
+            const currentActive = document.querySelector('nav a.active');
+            
+            if (currentActive) {
+                currentActive.classList.remove('active');
+            }
+            
+            element.classList.add('active');
+        }
+    </script>
 </body>
 </html>

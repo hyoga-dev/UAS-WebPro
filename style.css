@@ -58,6 +58,11 @@ iframe {
     width: 80%;
 }
 
+#sidebar nav a.selected {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
 #sidebar nav a:hover{
     /* background-color: rgba(0, 0, 0, 0.082); */
     /* padding-left: 20px; */
@@ -102,7 +107,7 @@ iframe {
 
 #content-navigation .active {
     padding-bottom: 8px;
-    padding-right: 8px;
+    /* padding-right: 8px; */
     color: var(--primary-color);
     border-bottom: 3px solid var(--primary-color);
     /* background-color: red; */
@@ -189,6 +194,17 @@ iframe {
 .btn-filter:hover {
     cursor: pointer;
     /* background-color: rgb(190, 190, 190); */
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    opacity: 70%;
+}
+
+.btn-filter:active {
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.btn-filter.active {
     border: 1px solid var(--primary-color);
     color: var(--primary-color);
 }
