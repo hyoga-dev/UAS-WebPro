@@ -14,31 +14,29 @@
                 <p>Hello Bambang, welcome back! </p>
             </div>
             <div id="header-navigation">
-                something
+                <div class="cart"><a href="cart.html">cart</a> </div>
             </div>
         </div>
-
+        
         <div id="content-navigation">
-            <nav>
                 <nav>
                     <a href="dashboard_frame/shop.html" target="dashboard-content" class="active" onclick="makeActive(this)">Shop</a>
-                    <a href="dashboard_frame/plantsCare.html" target="dashboard-content" onclick="makeActive(this)">Plants Care</a>
+                    <!-- <a href="dashboard_frame/plantsCare.html" target="dashboard-content" onclick="makeActive(this)">Plants Care</a> -->
                 </nav>
-            </nav>
         </div>
-
+        
         <iframe src="dashboard_frame/shop.html" name="dashboard-content" frameborder="0" width="100%" ></iframe>
     </div>
     <script>
-        function makeActive(element) {
-            const currentActive = document.querySelector('nav a.active');
+        // function makeActive(element) {
+        //     const currentActive = document.querySelector('nav a.active');
             
-            if (currentActive) {
-                currentActive.classList.remove('active');
-            }
+        //     if (currentActive) {
+        //         currentActive.classList.remove('active');
+        //     }
             
-            element.classList.add('active');
-        }
+        //     element.classList.add('active');
+        // }
     </script>
 </body>
 </html>

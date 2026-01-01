@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
-<body>
+<body style="overflow: hidden;">
     <div id="content">
         <div id="content-header">
             <h1>My Orders</h1>
@@ -24,7 +24,81 @@
                 <a href="#" target="orders-content" onclick="makeActive(this)">Dibatalkan</a>
             </nav>
         </div>
-        <iframe src="" name="orders-content" frameborder="0" width="100%" ></iframe>
+        <div id="order-container">
+
+            <div class="order-card">
+                <div class="order-info">
+                    <div class="order-tag">Tanggal pemesanan: 08-4-2026</div>
+                    <div class="ingfo">Selesai</div>
+                </div>
+                <div class="order">
+                    <div class="left-order">
+                        <div class="product-pic">
+                            <img src="Assets/Image/giant-white.png" width="100" alt="">
+                        </div>
+                        <div class="title-quantity">
+                            <h2>Giant-white</h2>
+                            <div class="quantity">
+                                2x
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-detail">
+                        Rp. 56.000  
+                    </div>
+                </div>
+                <div class="order">
+                    <div class="left-order">
+                        <div class="product-pic">
+                            <img src="Assets/Image/giant-white.png" width="100" alt="">
+                        </div>
+                        <div class="title-quantity">
+                            <h2>Giant-white</h2>
+                            <div class="quantity">
+                                2x
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-detail">
+                        Rp. 56.000  
+                    </div>
+                </div>
+                <div class="order">
+                    <div class="left-order">
+                        <div class="product-pic">
+                            <img src="Assets/Image/giant-white.png" width="100" alt="">
+                        </div>
+                        <div class="title-quantity">
+                            <h2>Giant-white</h2>
+                            <div class="quantity">
+                                2x
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="order-detail">
+                        Rp. 56.000  
+                    </div>
+                </div>
+
+                <div class="order-nav">
+                    <div class="total">
+                        <span>Total Pesanan:</span> <span class="total-number">Rp.2.000.000</span>
+                    </div>
+
+                    <div class="order-btn-container">
+                        <div class="btn-nilai btn-order">
+                            Nilai
+                        </div>
+                        <div class="btn-beli-lagi btn-order">
+                            Beli lagi
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
     </div>
 
     <script>

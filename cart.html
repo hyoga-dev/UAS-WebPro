@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    
+</head>
+<body style="overflow: hidden;">
+    <div id="content">
+        <div id="cart-header">
+            <h1>My Cart</h1>
+        </div>
+
+        <div id="cart-item-container">
+            <table>
+                <tr>
+                    <th style="width: 35%;">Produk</th>
+                    <th>Harga Satuan</th>
+                    <th>Kuantitas</th>
+                    <th>Total Harga</th>
+                    <th>Aksi</th>
+                </tr>
+                <tr style="padding-top: 26px;">
+                    <td>
+                        <div class="product-detail-container">
+                            <img src="Assets/Image/giant-white.png" alt="" width="100px">
+                            <div>Giant white</div>
+                        </div>
+                    </td>
+                    <td class="harga-satuan">Rp. 50.000</td>
+                    <td class="kuantitas"><input type="number" value="2"></td>
+                    <td class="total-harga"></td>
+                    <td>ola</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        const elements = document.querySelectorAll('.total-harga');
+        const kuantitas = document.getElementsByClassName('.kuantitas')
+
+        elements.forEach(el => {
+            // el.classList.add('active');
+            el.innerHTML = 2 * 15000 ;
+        });
+    </script>
+</body>
+</html>

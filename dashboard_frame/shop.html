@@ -21,9 +21,9 @@
         </div>
 
         <div id="filter">
-            <div class="btn-filter" onclick="toggleFilter(this)">Popular</div>
-            <div class="btn-filter" onclick="toggleFilter(this)">Newest</div>
-            <div class="btn-filter" onclick="toggleFilter(this)">Price</div>
+            <div class="btn-filter" onclick="makeActive(this)">Popular</div>
+            <div class="btn-filter" onclick="makeActive(this)">Newest</div>
+            <div class="btn-filter" onclick="makeActive(this)">Price</div>
         </div>
 
         <div id="product-container">
@@ -122,6 +122,18 @@
     <script>
         function toggleFilter(element) {
             element.classList.toggle('active');
+        }
+    </script>
+
+    <script>
+        function makeActive(element) {
+            const links = document.querySelectorAll('#filter div');
+
+            links.forEach(link => {
+                link.classList.remove('active');
+            });
+
+            element.classList.add('active');
         }
     </script>
 </body>
