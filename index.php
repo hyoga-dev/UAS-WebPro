@@ -1,9 +1,19 @@
+<?php
+session_start();
+
+// Cek apakah user sudah login, jika belum lempar ke halaman login
+if (!isset($_SESSION['login'])) {
+    header("Location: login.php");
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Phyto Store - Dashboard</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="style.css">
@@ -13,11 +23,13 @@
         
         <div id="sidebar">
             <h1>Phyto Store</h1>
+            
             <nav>
-                <a href="dashboard.html" target="content" class="selected" onclick="makeActive(this)">Dashboard</a>
-                <a href="myOrder.html" target="content" onclick="makeActive(this)">My Orders</a>
-                <!-- <a href="explore.html" target="content" onclick="makeActive(this)">Explore</a> -->
+                <a href="dashboard.php" target="content" class="selected" onclick="makeActive(this)">Dashboard</a>
+                <a href="myOrder.php" target="content" onclick="makeActive(this)">My Orders</a>
+                <a href="logout.php" style="color: #ff4d4d;">Logout</a>
             </nav>
+
             <h2>Categories</h2>
 
             <label class="custom-container">
@@ -41,7 +53,8 @@
                 Planters
             </label>
         </div>
-        <iframe src="cart.html" name="content" frameborder="0" width="100%" id="i-content"></iframe>
+
+        <iframe src="dashboard.php" name="content" frameborder="0" width="100%" id="i-content"></iframe>
     </div>
 
     <script>
