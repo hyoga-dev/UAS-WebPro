@@ -20,7 +20,7 @@ if (!isset($_SESSION['login'])) {
 </head>
 <body>
     <div id="wrapper">
-        
+        <!-- test -->
         <div id="sidebar">
             <h1>Phyto Store</h1>
             
