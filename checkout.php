@@ -1,6 +1,6 @@
 <?php
 session_start();
-$conn = mysqli_connect("localhost", "root", "", "uas_webpro");
+$conn = mysqli_connect("localhost", "root", "", "pytho");
 
 if (!isset($_SESSION['login'])) {
     header("Location: login.php");

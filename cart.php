@@ -2,7 +2,6 @@
 session_start();
 $total_bayar = 0;
 
-// Logika untuk Update Kuantitas
 if (isset($_GET['action']) && isset($_GET['id'])) {
     $id = $_GET['id'];
     if ($_GET['action'] == 'add') {
@@ -11,7 +10,7 @@ if (isset($_GET['action']) && isset($_GET['id'])) {
         if ($_SESSION['cart'][$id]['quantity'] > 1) {
             $_SESSION['cart'][$id]['quantity'] -= 1;
         } else {
-            unset($_SESSION['cart'][$id]); // Hapus jika jumlah jadi 0
+            unset($_SESSION['cart'][$id]); 
         }
     }
     header("Location: cart.php");

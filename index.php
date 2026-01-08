@@ -29,29 +29,6 @@ if (!isset($_SESSION['login'])) {
                 <a href="myOrder.php" target="content" onclick="makeActive(this)">My Orders</a>
                 <a href="logout.php" style="color: #ff4d4d;">Logout</a>
             </nav>
-
-            <h2>Categories</h2>
-
-            <label class="custom-container">
-                <input type="checkbox" checked="checked">
-                <span class="checkmark"></span>
-                Gardening
-            </label>
-            <label class="custom-container">
-                <input type="checkbox" checked="checked">
-                <span class="checkmark"></span>
-                Plants
-            </label>
-            <label class="custom-container">
-                <input type="checkbox" checked="checked">
-                <span class="checkmark"></span>
-                Seeds
-            </label>
-            <label class="custom-container">
-                <input type="checkbox" checked="checked">
-                <span class="checkmark"></span>
-                Planters
-            </label>
         </div>
 
         <iframe src="dashboard.php" name="content" frameborder="0" width="100%" id="i-content"></iframe>

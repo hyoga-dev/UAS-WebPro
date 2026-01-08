@@ -25,17 +25,17 @@ $namaUser = $_SESSION['user_name'];
                 <p>Hello <?php echo htmlspecialchars($namaUser); ?>, welcome back! </p>
             </div>
             <div id="header-navigation">
-                <div class="cart"><a href="cart.html">cart</a> </div>
+                <div class="cart"><a href="cart.php">cart</a> </div>
             </div>
         </div>
         
         <div id="content-navigation">
             <nav>
-                <a href="dashboard_frame/shop.php" target="dashboard-content" class="active" onclick="makeActive(this)">Shop</a>
+                <a href="shop.php" target="dashboard-content" class="active" onclick="makeActive(this)">Shop</a>
                 </nav>
         </div>
         
-        <iframe src="dashboard_frame/shop.php" name="dashboard-content" frameborder="0" width="100%" ></iframe>
+        <iframe src="shop.php" name="dashboard-content" frameborder="0" width="100%" ></iframe>
     </div>
 
     <script>

@@ -16,7 +16,7 @@ $query = "SELECT * FROM orders";
 if ($status_filter !== 'All') {
     $query .= " WHERE status = '$status_filter'";
 }
-$query .= " ORDER BY created_at DESC";
+$query .= " ORDER BY tanggal_pemesanan DESC";
 
 $result = mysqli_query($conn, $query);
 ?>

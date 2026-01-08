@@ -10,7 +10,7 @@ $result = mysqli_query($conn, $query);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="style.css">
     <title>Shop - Phyto</title>
 </head>
 <body>
@@ -24,7 +24,7 @@ $result = mysqli_query($conn, $query);
                     <div id="square">ha</div>
                 </a>
             </div>
-            <img src="../Assets/Image/thumb-up.png" id="Timage" alt="Thumb up Image">
+            <img src="Assets/Image/thumb-up.png" id="Timage" alt="Thumb up Image">
         </div>
 
         <div id="filter">
@@ -39,7 +39,7 @@ $result = mysqli_query($conn, $query);
                 while($row = mysqli_fetch_assoc($result)) { 
             ?>
                 <div class="product">
-                    <img src="../Assets/Image/<?php echo $row['image']; ?>" class="product-img" alt="<?php echo $row['name']; ?>">
+                    <img src="Assets/Image/<?php echo $row['image']; ?>" class="product-img" alt="<?php echo $row['name']; ?>">
                     <div class="product-detail">
                         <p><?php echo $row['name']; ?></p>
                         <p>
