@@ -26,6 +26,6 @@ if (isset($_GET['id'])) {
     }
 }
 
-header("Location: dashboard_frame/shop.php");
+header("Location: shop.php");
 exit;
 ?>
