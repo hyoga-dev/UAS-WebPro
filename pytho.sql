@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 08 Jan 2026 pada 01.21
+-- Waktu pembuatan: 09 Jan 2026 pada 01.31
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -61,7 +61,14 @@ CREATE TABLE `products` (
 INSERT INTO `products` (`id`, `name`, `price`, `rating`, `reviews`, `image`, `category`) VALUES
 (1, 'Giant White', 46000, 5, 76, 'giant-white.png', 'Plants'),
 (2, 'Mini Cactus', 25000, 4, 32, 'cactus.png', 'Plants'),
-(3, 'Garden Tool Set', 120000, 5, 12, 'tools.png', 'Gardening');
+(3, 'Garden Tool Set', 99000, 5, 12, 'tools.png', 'Gardening'),
+(4, 'Organic Plant Seeds', 15000, 4, 89, 'seeds.png', 'Seeds'),
+(5, 'Terracotta Plant Pot', 85000, 5, 15, 'pot.png', 'Planters'),
+(6, 'Snake Plant (Lidah Mertua)', 65000, 4, 210, 'snake-plant.png', 'Plants'),
+(7, 'Automatic Water Sprayer', 90000, 5, 69, 'sprayer.png', 'Gardening'),
+(8, 'Aloe Vera Medic', 35000, 4, 55, 'aloe.png', 'Plants'),
+(9, 'Hanging Macrame Pot', 89000, 5, 8, 'macrame.png', 'Planters'),
+(10, 'Golden Pothos', 45000, 4, 150, 'pothos.png', 'Plants');
 
 -- --------------------------------------------------------
 
@@ -83,7 +90,9 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `nama`, `email`, `password`, `created_at`) VALUES
 (1, 'lamy', 'hyogadecaprio@gmail.com', '$2y$10$wUb.3qoAHsuSne0EGJcXeeBPYbnf5QdQjoo/a63xaB2u3mf/go1B.', '2026-01-07 01:13:52'),
-(2, 'lamy', 'admin@gmail.com', '$2y$10$f6DvihyfPp3wnhbp3tzXaus29qsEVY8WiKI9Wyy4wz6gkLHNdwTgO', '2026-01-07 23:58:46');
+(2, 'lamy', 'admin@gmail.com', '$2y$10$f6DvihyfPp3wnhbp3tzXaus29qsEVY8WiKI9Wyy4wz6gkLHNdwTgO', '2026-01-07 23:58:46'),
+(3, 'udin', 'hyogadecaprio4@gmail.com', '$2y$10$SKuRNV/yIu4waT.FuNYhD.gTMyM6rWy/s05EYcAgecfuvgqxot6Ge', '2026-01-09 00:29:16'),
+(4, 'bahak', 'hyogadecaprio7@gmail.com', '$2y$10$WOUxgvIFKCc07xPguOes/eWMohBJq/W4mmazCbiXEqgwQkWHo37sW', '2026-01-09 00:30:39');
 
 --
 -- Indexes for dumped tables
@@ -116,19 +125,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT untuk tabel `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id_order` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

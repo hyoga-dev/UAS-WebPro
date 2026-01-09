@@ -88,7 +88,7 @@ if (isset($_GET['action']) && isset($_GET['id'])) {
                         
                         <tr>
                             <td colspan="3" style="text-align: right; font-weight: bold; padding: 20px;">Total yang harus dibayar:</td>
-                            <td colspan="2" style="font-weight: bold; font-size: 1.2em; color: #2ecc71;">
+                            <td colspan="2" style="font-weight: bold; font-size: 1.2em; color: #62a72b;">
                                 Rp <?php echo number_format($total_bayar, 0, ',', '.'); ?>
                             </td>
                         </tr>
@@ -96,7 +96,7 @@ if (isset($_GET['action']) && isset($_GET['id'])) {
                         <tr>
                             <td colspan="5" style="text-align: center; padding: 50px;">
                                 <h3>Keranjang belanja kosong.</h3>
-                                <a href="dashboard_frame/shop.php" style="color: #2ecc71;">Ayo belanja sekarang!</a>
+                                <a href="dashboard_frame/shop.php" style="color: #62a72b;">Ayo belanja sekarang!</a>
                             </td>
                         </tr>
                     <?php endif; ?>

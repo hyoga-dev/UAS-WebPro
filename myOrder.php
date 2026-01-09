@@ -30,11 +30,45 @@ $result = mysqli_query($conn, $query);
     <title>My Orders</title>
 </head>
 <body style="overflow: hidden;">
+    <style>
+    /* Modal sederhana untuk Rating */
+    .modal { display: none; position: fixed; z-index: 999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); }
+    .modal-content { background: white; margin: 15% auto; padding: 20px; width: 300px; border-radius: 10px; text-align: center; }
+    .stars { font-size: 25px; cursor: pointer; color: #ccc; }
+    .stars:hover, .stars.active { color: #f1c40f; }
+    .btn-submit-rating { background: #62a72b; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin-top: 15px; }
+    /* Mematikan tombol jika bukan status Selesai */
+    .btn-disabled { opacity: 0.5; cursor: not-allowed; pointer-events: none; }
+</style>
+
+<div id="ratingModal" class="modal">
+    <div class="modal-content">
+        <h3>Nilai Produk</h3>
+        <p id="ratingProductName"></p>
+        <div class="star-container">
+            <span class="stars" onclick="setRating(1)">★</span>
+            <span class="stars" onclick="setRating(2)">★</span>
+            <span class="stars" onclick="setRating(3)">★</span>
+            <span class="stars" onclick="setRating(4)">★</span>
+            <span class="stars" onclick="setRating(5)">★</span>
+        </div>
+        <form action="submit_rating.php" method="POST">
+            <input type="hidden" name="product_name" id="inputProductName">
+            <input type="hidden" name="rating_value" id="ratingValue" value="0">
+            <button type="submit" class="btn-submit-rating">Kirim Nilai</button>
+            <button type="button" onclick="closeModal()" style="background:none; border:none; color:red; cursor:pointer;">Batal</button>
+        </form>
+    </div>
+</div>
+
+
+
+
     <div id="content">
         <div id="content-header">
             <h1>My Orders</h1>
             <div id="header-navigation">
-                something
+                <div class="cart"><a href="cart.php">cart</a> </div>
             </div>
         </div>
         <div id="content-navigation">
@@ -80,8 +114,11 @@ $result = mysqli_query($conn, $query);
                             </div>
 
                             <div class="order-btn-container">
-                                <div class="btn-nilai btn-order">Nilai</div>
-                                <div class="btn-beli-lagi btn-order">Beli lagi</div>
+                                <div class="btn-nilai btn-order <?php echo ($row['status'] != 'Selesai') ? 'btn-disabled' : ''; ?>" 
+                                    onclick="openModal('<?php echo $row['nama_produk']; ?>')">
+                                    Nilai
+                                </div>
+                                <a href="shop.php" class="btn-beli-lagi btn-order" style="text-decoration:none;">Beli lagi</a>
                             </div>
                         </div>
                     </div>
@@ -92,6 +129,26 @@ $result = mysqli_query($conn, $query);
         </div>
     </div>
 
+
+    <script>
+        function openModal(name) {
+            document.getElementById('ratingModal').style.display = 'block';
+            document.getElementById('ratingProductName').innerText = name;
+            document.getElementById('inputProductName').value = name;
+        }
+
+        function closeModal() {
+            document.getElementById('ratingModal').style.display = 'none';
+        }
+
+        function setRating(n) {
+            document.getElementById('ratingValue').value = n;
+            const stars = document.querySelectorAll('.stars');
+            stars.forEach((s, index) => {
+                s.style.color = index < n ? '#f1c40f' : '#ccc';
+            });
+        }
+    </script>
     <script>
         function makeActive(element) {
             const links = document.querySelectorAll('#order-nav a');
