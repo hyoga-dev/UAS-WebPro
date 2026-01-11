@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 09 Jan 2026 pada 01.31
+-- Waktu pembuatan: 11 Jan 2026 pada 12.56
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -37,6 +37,14 @@ CREATE TABLE `orders` (
   `harga_satuan` decimal(12,2) NOT NULL,
   `total_harga` decimal(14,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `orders`
+--
+
+INSERT INTO `orders` (`id_order`, `tanggal_pemesanan`, `status`, `nama_produk`, `gambar_produk`, `jumlah`, `harga_satuan`, `total_harga`) VALUES
+(6, '2026-01-11 12:04:14', 'Sedang Dikemas', 'Hanging Macrame Pot', 'macrame.png', 1, 89000.00, 89000.00),
+(7, '2026-01-11 12:06:33', 'Sedang Dikemas', 'Aloe Vera Medic', 'aloe.png', 1, 35000.00, 35000.00);
 
 -- --------------------------------------------------------
 
@@ -81,18 +89,17 @@ CREATE TABLE `users` (
   `nama` varchar(100) DEFAULT NULL,
   `email` varchar(100) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `role` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data untuk tabel `users`
 --
 
-INSERT INTO `users` (`id`, `nama`, `email`, `password`, `created_at`) VALUES
-(1, 'lamy', 'hyogadecaprio@gmail.com', '$2y$10$wUb.3qoAHsuSne0EGJcXeeBPYbnf5QdQjoo/a63xaB2u3mf/go1B.', '2026-01-07 01:13:52'),
-(2, 'lamy', 'admin@gmail.com', '$2y$10$f6DvihyfPp3wnhbp3tzXaus29qsEVY8WiKI9Wyy4wz6gkLHNdwTgO', '2026-01-07 23:58:46'),
-(3, 'udin', 'hyogadecaprio4@gmail.com', '$2y$10$SKuRNV/yIu4waT.FuNYhD.gTMyM6rWy/s05EYcAgecfuvgqxot6Ge', '2026-01-09 00:29:16'),
-(4, 'bahak', 'hyogadecaprio7@gmail.com', '$2y$10$WOUxgvIFKCc07xPguOes/eWMohBJq/W4mmazCbiXEqgwQkWHo37sW', '2026-01-09 00:30:39');
+INSERT INTO `users` (`id`, `nama`, `email`, `password`, `created_at`, `role`) VALUES
+(2, 'lamy', 'admin@gmail.com', '$2y$10$f6DvihyfPp3wnhbp3tzXaus29qsEVY8WiKI9Wyy4wz6gkLHNdwTgO', '2026-01-07 23:58:46', ''),
+(4, 'bahak', 'hyogadecaprio7@gmail.com', '$2y$10$WOUxgvIFKCc07xPguOes/eWMohBJq/W4mmazCbiXEqgwQkWHo37sW', '2026-01-09 00:30:39', 'admin');
 
 --
 -- Indexes for dumped tables
@@ -125,7 +132,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT untuk tabel `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id_order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT untuk tabel `products`
