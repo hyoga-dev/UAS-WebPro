@@ -104,8 +104,8 @@ if (isset($_GET['action']) && isset($_GET['id'])) {
             </table>
 
             <?php if (!empty($_SESSION['cart'])): ?>
-                <div style="margin-top: 20px; text-align: right; padding-right: 20px; padding-bottom: 50px;">
-                    <a href="checkout.php" class="btn-share" style="text-decoration: none; display: inline-block; cursor: pointer;">Checkout Sekarang</a>
+                <div style="margin-top: 20px; text-align: right; padding-right: 20px;">
+                    <a href="checkout_page.php" class="btn-share" style="text-decoration: none; display: inline-block;">Lanjut ke Pembayaran</a>
                 </div>
             <?php endif; ?>
         </div>
