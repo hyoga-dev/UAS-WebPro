@@ -98,8 +98,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `nama`, `email`, `password`, `created_at`, `role`) VALUES
-(2, 'lamy', 'admin@gmail.com', '$2y$10$f6DvihyfPp3wnhbp3tzXaus29qsEVY8WiKI9Wyy4wz6gkLHNdwTgO', '2026-01-07 23:58:46', ''),
-(4, 'bahak', 'hyogadecaprio7@gmail.com', '$2y$10$WOUxgvIFKCc07xPguOes/eWMohBJq/W4mmazCbiXEqgwQkWHo37sW', '2026-01-09 00:30:39', 'admin');
+(2, 'lamy', 'admin@gmail.com', '$2y$10$f6DvihyfPp3wnhbp3tzXaus29qsEVY8WiKI9Wyy4wz6gkLHNdwTgO', '2026-01-07 23:58:46', '')
 
 --
 -- Indexes for dumped tables
